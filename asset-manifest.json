@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Tel-Ran-Project/static/css/main.cdca9bb5.css",
+    "main.js": "/Tel-Ran-Project/static/js/main.7d28fdfb.js",
+    "static/media/banner.png": "/Tel-Ran-Project/static/media/banner.df87937d4c16e1db2384.png",
+    "static/media/Lock.png": "/Tel-Ran-Project/static/media/Lock.7dcceb423af4ebcd6246.png",
+    "static/media/Flowers.png": "/Tel-Ran-Project/static/media/Flowers.ece71e9dae3cbf9c885a.png",
+    "static/media/Bridge.png": "/Tel-Ran-Project/static/media/Bridge.a494e9b9358af12bcf85.png",
+    "static/media/discounts.png": "/Tel-Ran-Project/static/media/discounts.44ddfa3ba42c2be627b5.png",
+    "index.html": "/Tel-Ran-Project/index.html",
+    "main.cdca9bb5.css.map": "/Tel-Ran-Project/static/css/main.cdca9bb5.css.map",
+    "main.7d28fdfb.js.map": "/Tel-Ran-Project/static/js/main.7d28fdfb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdca9bb5.css",
+    "static/js/main.7d28fdfb.js"
+  ]
+}
