@@ -6,9 +6,9 @@ import s from "./index.module.css"
 
 export default function Header() {
   return (
-    <header className={s.header}>
+    <header className={["wrapper", s.header].join(" ")}>
         <div className={s.logo_block}>
-          <Link to="/">
+          <Link to="/" className={s.link_block}>
             <img src={logo} alt="logo" />
             <p>Каталог</p>
           </Link>
@@ -17,7 +17,7 @@ export default function Header() {
         <nav>
             <ul className={s.nav_block}>
                 <li>
-                  <Link to="/">Категории</Link>
+                  <Link to="/category">Категории</Link>
                 </li>
                 <li>Купон</li>
                 <li>Акции</li>

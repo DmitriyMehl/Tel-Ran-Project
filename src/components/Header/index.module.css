@@ -2,15 +2,36 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1380px;
-    margin: 19px auto;
+    /* max-width: 1380px; */
+    margin: 19px 35px;
 }
 
 .logo_block {
+    width: 260px;
+}
+
+.link_block {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 260px;
+    text-decoration: none;
+    color: black;
+}
+
+.logo_block p {
+    border: 2px solid #339933;
+    border-radius: 5px;
+    background-color: #339933;
+    width: 129px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    color: #fff;
 }
 
 .nav_block {
@@ -20,6 +41,21 @@
     gap: 57px;
     font-size: 16px;
     font-weight: 500;
+}
+
+.nav_block li:hover {
+    color: #339933;
+    cursor: pointer;
+}
+
+.nav_block li a:hover {
+    color: #339933;
+    cursor: pointer;
+}
+
+.nav_block a {
+    text-decoration: none;
+    color: black;
 }
 
 .nav_block li {
