@@ -7,7 +7,7 @@ import s from "./index.module.css"
 export default function ProductPages() {
 
     const dispatch = useDispatch();
-    const product = useSelector(state => state.products);
+    const product = useSelector(state => state.product);
 
     const { id } = useParams();
 
@@ -22,18 +22,18 @@ export default function ProductPages() {
     // const product_id = product.map((el) => el.id)
     // const image = product.map((el) => {return el.image})
 
-    const { title, description, price, image } = product;
+    // const { title, description, price, image } = product;
     
-    const img = `http://localhost:3333${image}`;
+    // const img = `http://localhost:3333${image}`;
 
     console.log(product);
 
   return (
     <div>
-        <img src={img} alt="{title}" />
-        {/* <div>
-            <p>{ title }</p>
-            <p>{ description }</p>
+        {/* <img src={img} alt="{title}" /> */}
+        <div>
+            {/* <p>{ title }</p> */}
+            {/* <p>{ description }</p>
             <div>
                 <p>
                     <span>Price: </span>
@@ -43,8 +43,8 @@ export default function ProductPages() {
                     { discont_price }
                 </p>
                 <button>Add to cart</button>
-            </div>
-        </div> */}
+            </div> */}
+        </div>
     </div>
   )
 }

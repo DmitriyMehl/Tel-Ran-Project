@@ -1,27 +1,35 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
+import { addToCart } from '../../store/reducers/cart';
 import s from "./index.module.css"
 
-export default function ProductCard({ title, price, discont_price, image, category }) {
+export default function ProductCard({ id, title, price, discont_price, image, categororys }) {
 
     const img = `http://localhost:3333${image}`;
-    const product_url = `/products/${category}`
+    const product_url = `/products/${categororys}`
+
+    const dispatch = useDispatch();
+    const add_to_cart = () => dispatch(addToCart({ id, title, image, price, discont_price }))
     
     const discont = `${Math.round(100 - discont_price * 100 / price)}`
 
   return (
     <div className={['wrapper', s.block].join(" ")}>
-        <Link to={product_url} className={s.product_block}>
-            <div>
-                <img src={img} alt={title} />
+            <div className={s.product_block}>
+                <div className={s.img_block}>
+                    <img src={img} alt={title} />
+                    <button onClick={add_to_cart}>Добавить в корзину</button>
+                </div>
+            <Link to={product_url}>    
                 <div className={s.price_block}>
                     <p className={s.discont_price}>{ discont_price }p</p>
                     <p className={s.price}>{ price }p</p>
                     <p className={s.discont}>{ discont }%</p>
                 </div>
                 <p>{ title }</p>
+            </Link>   
             </div>
-        </Link>
     </div>
   )
 }

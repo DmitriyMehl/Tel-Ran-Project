@@ -12,25 +12,26 @@ export const productsReducer = (state = defaulState, action) => {
     if(action.type === LOAD_PRODUCTS){
         return action.payload
     } else if (action.type === SORT_PRODUCTS) {
-    if (action.payload === 'default'){
-        return state
-    } else if(typeof state[0][action.payload] === 'string') {
-        state.sort((a, b) => a[action.payload].localeCompare(b[action.payload]))
-    } else {
-        state.sort((a, b) => a[action.payload] - b[action.payload])
-    }
-        return[...state]
-    } else if(action.type === SEARCH_PRICE){
-        const { min_value, max_value } = action.payload;
-        return state.map(el => {
-            if(el.price >= min_value && el.price <= max_value){
-                el.hide_mark = false;
-            } else {
-                el.hide_mark = true;
-            }
-            return el;
+        if (state.length === 0) return state
+        if (action.payload === 'default'){
+            return state
+        } else if(typeof state[0][action.payload] === 'string') {
+            state.sort((a, b) => a[action.payload].localeCompare(b[action.payload]))
+        } else {
+            state.sort((a, b) => a[action.payload] - b[action.payload])
+        }
+            return[...state]
+        } else if(action.type === SEARCH_PRICE){
+            const { min_value, max_value } = action.payload;
+            return state.map(el => {
+                if(el.price >= min_value && el.price <= max_value){
+                    el.hide_mark = false;
+                } else {
+                    el.hide_mark = true;
+                }
+                return el;
         })
-    } else {
-        return state
+        } else {
+            return state
     }
 }

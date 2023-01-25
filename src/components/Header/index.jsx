@@ -22,7 +22,11 @@ export default function Header() {
                 <li>Купон</li>
                 <li>Акции</li>
                 <li>Контакты</li>
-                <li><img src={shopping_bag} alt="schopping_bag" /></li>
+                <li>
+                  <Link to="/cart">
+                    <img src={shopping_bag} alt="schopping_bag" />
+                  </Link>
+                </li>
             </ul>
         </nav>
     </header>

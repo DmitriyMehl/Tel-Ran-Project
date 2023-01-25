@@ -2,14 +2,41 @@
     width: 300px;
 }
 
-.product_block {
+.product_block a{
     text-decoration: none;
 }
 
-.product_block img{
+.img_block {
+    position: relative;
+}
+
+.img_block img{
     width: 300px;
     height: 300px;
     object-fit: cover;
+}
+
+.img_block button {
+    display: none;
+}
+
+.img_block:hover button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 290px;
+    height: 72px;
+    border: 2px solid #339933;
+    border-radius: 21px;
+    background-color: #F1FFF1;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    color: #339933;
+    position: absolute;
+    bottom: 32px;
+    left: 5px;
+    cursor: pointer;
 }
 
 .price_block {

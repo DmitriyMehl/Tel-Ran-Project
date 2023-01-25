@@ -4,6 +4,12 @@ export const load_products = categororys => {
     return dispatch => {
         fetch(`http://localhost:3333/categories/${categororys}`)
             .then(resp => resp.json())
-            .then(json => dispatch(loadProducts(json)))
+            .then(json => {
+                const payload = json.map(el => ({
+                    ...el,
+                    hide_mark: false
+                }))
+                dispatch(loadProducts(payload))
+            })
     }
 }

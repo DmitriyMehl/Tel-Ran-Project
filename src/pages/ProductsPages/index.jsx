@@ -10,7 +10,7 @@ export default function ProductsPages() {
 
   const { categororys } = useParams();
   const dispatch = useDispatch();
-  const products = useSelector(state => state.products)
+  const products = useSelector(state => state.products);
 
   useEffect(() => {
     dispatch(load_products(categororys))
@@ -25,9 +25,11 @@ export default function ProductsPages() {
     dispatch(searchPrice({ min_value, max_value }))
   }
 
+  const category_up = categororys[0].toUpperCase() + categororys.slice(1);
+
   return (
     <div className={["wrapper", s.products_container].join(" ")}>
-      <h2>Инвентарь</h2>
+      <h2>{ category_up }</h2>
       <div className={s.product_section}>
         <div className={s.sort_block}>
           <span>Цена:</span>
