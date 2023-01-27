@@ -15,35 +15,31 @@ export default function ProductPages() {
         dispatch(load_product(id))
     }, []);
 
-    // const title = product.map((el) => el.title);
-    // const price = product.map((el) => el.price);
-    // const description = product.map((el) => el.description);
-    // const discont_price = product.map((el) => el.discont_price);
-    // const product_id = product.map((el) => el.id)
-    // const image = product.map((el) => {return el.image})
+    const { title, description, price, image, discont_price } = product;
 
-    // const { title, description, price, image } = product;
-    
-    // const img = `http://localhost:3333${image}`;
+    const discont = `${Math.round(100 - discont_price * 100 / price)}`
+    const img = `http://localhost:3333${image}`;
 
     console.log(product);
 
   return (
-    <div>
-        {/* <img src={img} alt="{title}" /> */}
+    <div className={["wrapper", s.container].join(" ")}>
+        <div className={s.product_container}>
+            <p>{ title }</p>
+            <img src={img} alt="{title}" />
+        </div>
         <div>
-            {/* <p>{ title }</p> */}
-            {/* <p>{ description }</p>
-            <div>
-                <p>
-                    <span>Price: </span>
-                    { price }
-                </p>
-                <p>
-                    { discont_price }
-                </p>
+            <div className={s.price_container}>
+                <p className={s.discont_price}>{ discont_price }p</p>
+                <p className={s.price}>{ price }p</p>
+                <p className={s.discont}>{ discont }%</p>
+            </div>
+            <div className={s.title_container}>
                 <button>Add to cart</button>
-            </div> */}
+                <p className={s.border_p}></p>
+                <p className={s.descript}>Description</p>
+                <p className={s.description}>{ description }</p>
+            </div>
         </div>
     </div>
   )

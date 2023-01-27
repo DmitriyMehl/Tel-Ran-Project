@@ -1,4 +1,18 @@
+.basket_block {
+    display: flex;
+}
+
 .basket_block img{
     width: 193px;
     height: 167px;
+}
+
+.btn {
+    border: 2px solid black;
+}
+
+.btn button {
+    width: 50px;
+    background-color: transparent;
+    border-color: transparent;
 }

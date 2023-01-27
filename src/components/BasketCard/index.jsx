@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { cartDecrement, cartIncrement } from '../../store/reducers/cart';
 import s from "./index.module.css"
 
-export default function BasketCard({ id, title, price, discount_price, image, count }) {
+export default function BasketCard({ id, title, price, image, count }) {
 
   const dispatch = useDispatch();
   const increment = () => dispatch(cartIncrement(id));
@@ -14,15 +14,24 @@ export default function BasketCard({ id, title, price, discount_price, image, co
   return (
     <div className={["wrapper", s.basket].join.apply(" ")}>
       <div className={s.basket_block}>
-        <img src={img} alt={title} />
-        <p>{ title }</p>
-        <p>{ price } X { count } = { price * count }</p>
-        <p>{ discount_price }</p>
+        <div>
+          <img src={img} alt={title} />
         </div>
         <div>
-          <button onClick={increment}>+</button>
-          <button onClick={decrement}>-</button>    
+          <p>{ title }</p>
+          <div className={s.btn}>
+            <button onClick={increment}>+</button>
+              { count }
+            <button onClick={decrement}>-</button>
+          </div>
         </div>
+        <div>
+          <p>{ price }</p>
+          <p>{ count }</p>
+          {/* <p>{ price } X { count } = { price * count }</p> */}
+        </div>
+      </div>
+      
     </div>
   )
 }

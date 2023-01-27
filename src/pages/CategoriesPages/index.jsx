@@ -4,7 +4,7 @@ import CategoriesCard from '../../components/CategoriesCard';
 import { load_categories } from '../../requests/categories_req'
 import s from "./index.module.css"
 
-export default function CategoriesPage() {
+export default function CategoriesPages() {
 
     const dispatch = useDispatch();
     const category = useSelector(state => state.category);
