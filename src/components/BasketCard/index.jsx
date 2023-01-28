@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { cartDecrement, cartIncrement } from '../../store/reducers/cart';
+import { cartDecrement, cartIncrement, clearCart } from '../../store/reducers/cart';
 import s from "./index.module.css"
 
-export default function BasketCard({ id, title, price, image, count }) {
+export default function BasketCard({ id, title, price, image, count, discont_price }) {
 
   const dispatch = useDispatch();
   const increment = () => dispatch(cartIncrement(id));
@@ -13,25 +13,25 @@ export default function BasketCard({ id, title, price, image, count }) {
 
   return (
     <div className={["wrapper", s.basket].join.apply(" ")}>
+      <p className={s.border_p}></p>
       <div className={s.basket_block}>
-        <div>
+        <div className={s.img_block}>
           <img src={img} alt={title} />
-        </div>
-        <div>
-          <p>{ title }</p>
-          <div className={s.btn}>
-            <button onClick={increment}>+</button>
-              { count }
-            <button onClick={decrement}>-</button>
-          </div>
-        </div>
-        <div>
-          <p>{ price }</p>
-          <p>{ count }</p>
+          <button>X</button>
+          <p className={s.price_block}>{ discont_price }p</p>
+          <p className={s.count_block}>{ price }p</p>
           {/* <p>{ price } X { count } = { price * count }</p> */}
         </div>
+        <div className={s.title_block}>
+          <p>{ title }</p>
+          <div className={s.btn}>
+            <button onClick={decrement} className={s.increment}>-</button>
+              { count }
+            <button onClick={increment}>+</button>
+          </div>
+        </div>
+        
       </div>
-      
     </div>
   )
 }

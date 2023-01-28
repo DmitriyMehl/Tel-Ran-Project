@@ -11,6 +11,7 @@ export default function ProductsPages() {
   const { categororys } = useParams();
   const dispatch = useDispatch();
   const products = useSelector(state => state.products);
+  const category = useSelector(state => state.category);
 
   useEffect(() => {
     dispatch(load_products(categororys))
@@ -25,7 +26,9 @@ export default function ProductsPages() {
     dispatch(searchPrice({ min_value, max_value }))
   }
 
-  const category_up = categororys[0].toUpperCase() + categororys.slice(1);
+  
+
+  const category_up = category.length >= 1 ? category[categororys - 1].title : "";
 
   return (
     <div className={["wrapper", s.products_container].join(" ")}>
@@ -36,6 +39,7 @@ export default function ProductsPages() {
           <form onSubmit={search_price} className={s.search_form}>
             <input type="number" name="min" placeholder="from" min="0" />
             <input type="number" name="max" placeholder="to" />
+            <button>Add</button>
           </form>
         </div>
         <div className={s.sort_section}>

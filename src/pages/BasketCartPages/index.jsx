@@ -11,35 +11,38 @@ export default function BasketCartPages() {
 
   return (
     <div className={["wrapper", s.basket_page].join(" ")}>
-      <div>
+      <div className={s.basket_container}>
         <h2 className={s.basket}>Basket</h2>
-      <div className={s.nav_menu}>
-        <p className={s.home_basket}>Home / Basket</p>
-        <p className={s.back_to}>Back to shop</p>
-      </div>
-        {
-          cart.length === 0
-          ? <div>The cart is empty</div>
-          : <div>
-            {
-              cart.map(el => <BasketCard key={el.id} {...el} />)
-            }
-          </div>
-        }
+        <div className={s.nav_menu}>
+          <p className={s.home_basket}>Home / Basket</p>
+          <p className={s.back_to}>Back to shop</p>
+        </div>
+          {
+            cart.length === 0
+            ? <div>The cart is empty</div>
+            : <div>
+              {
+                cart.map(el => <BasketCard key={el.id} {...el} />)
+              }
+            </div>
+          }
       </div>
       
       <div className={s.basket_block}>
-        <p>Order Details</p>
-        <div>
-          <p>Sum</p>
-          <p>
+        <h2>Order Details</h2>
+        <div className={s.sum_block}>
+          <p className={s.sum}>Sum</p>
+          <p className={s.count}>
             {
               cart.reduce((prev, {price, count}) => prev + price * count, 0)
-            }
+            }p
           </p>
         </div>
-        <input type="tel" name='phone' placeholder='Your phone number' />
-        <button onClick={() => dispatch(clearCart())}>Clear the cart</button>
+        <div className={s.btn_block}>
+          <input type="tel" name='phone' placeholder='Your phone number' />
+          <button onClick={() => dispatch(clearCart())}>Clear the cart</button>
+        </div>
+        
       </div>
     </div>
   )
