@@ -80,6 +80,7 @@
 
 .btn button {
     font-size: 30px;
+    cursor: pointer;
 }
 
 .increment {

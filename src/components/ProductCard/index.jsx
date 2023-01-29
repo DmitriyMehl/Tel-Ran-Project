@@ -19,7 +19,7 @@ export default function ProductCard({ id, title, price, discont_price, image }) 
             <div className={s.product_block}>
                 <div className={s.img_block}>
                     <img src={img} alt={title} />
-                    <button onClick={add_to_cart}>Добавить в корзину</button>
+                    <button onClick={add_to_cart}>Add to Cart</button>
                 </div>
             <Link to={product_url}>    
                 <div className={s.price_block}>

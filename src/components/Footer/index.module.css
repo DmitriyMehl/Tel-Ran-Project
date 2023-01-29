@@ -28,6 +28,18 @@
     font-size: 15px;
 }
 
+.instagram {
+    font-size: 55px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.whatsApp {
+    font-size: 55px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
 .address {
     font-weight: 700;
     font-size: 40px;

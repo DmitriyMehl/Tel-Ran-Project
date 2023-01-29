@@ -18,7 +18,7 @@ export default function CategoriesPages() {
         <h1>Categories</h1>
         <div className={s.category_block}>
             {
-                category.map(el => <CategoriesCard key={el.id} categorys={el.id} {...el} />)
+                category.map((el, index) => index >= 0 && index <= 3 ? <CategoriesCard key={el.id} categorys={el.id} {...el} /> : "")
             }
         </div>
     </div>

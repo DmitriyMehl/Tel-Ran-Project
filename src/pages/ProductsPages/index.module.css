@@ -25,6 +25,7 @@
     letter-spacing: 0.03em;
     padding: 10px 0 10px 10px;
     margin: 0 0 45px 15px;
+    cursor: pointer;
 }
 
 .sort_section span {
@@ -61,6 +62,20 @@
     color: #ACACAC;
     padding: 10px 0 10px 10px;
     margin: 0 15px 35px 15px;
+}
+
+.search_form button {
+    background: #339933;
+    border: 2px solid #339933;
+    border-radius: 5px;
+    width: 103px;
+    height: 42px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    color: #fff;
+    cursor: pointer;
 }
 
 .product_block {

@@ -10,18 +10,18 @@ export default function Header() {
         <div className={s.logo_block}>
           <Link to="/" className={s.link_block}>
             <img src={logo} alt="logo" />
-            <p>Каталог</p>
+            <p>Catalog</p>
           </Link>
         </div>
 
         <nav>
             <ul className={s.nav_block}>
                 <li>
-                  <Link to="/category">Категории</Link>
+                  <Link to="/category">Categories</Link>
                 </li>
-                <li>Купон</li>
-                <li>Акции</li>
-                <li>Контакты</li>
+                <li>Coupon</li>
+                <li>Promotion</li>
+                <li>Contacts</li>
                 <li>
                   <Link to="/cart">
                     <img src={shopping_bag} alt="schopping_bag" />

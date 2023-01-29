@@ -25,11 +25,11 @@ export default function DiskountsForm() {
             <img src={discount} alt="Gnome" />
         </div>
         <div className={s.info_block}>
-            <h2>Скидка 5%</h2>
-            <p>на первый заказ</p>
+            <h2>Sale 5%</h2>
+            <p>for the first order</p>
             <form onSubmit={handleSubmit()} className={s.form_block}>
                 <input type="tel" name="phone" placeholder="+7" {...phone_register} />
-                <button>Получить скидку</button>
+                <button>Get a discount</button>
                 <div className={s.error}>
                     {/* {errors.phone && <p>{errors.phone?.message}</p>} */}
                 </div>

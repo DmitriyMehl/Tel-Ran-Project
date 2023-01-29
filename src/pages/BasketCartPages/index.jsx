@@ -22,7 +22,7 @@ export default function BasketCartPages() {
             ? <div>The cart is empty</div>
             : <div>
               {
-                cart.map(el => <BasketCard key={el.id} {...el} />)
+                cart.map(el => <BasketCard key={el.id} {...el} ID={el.id} />)
               }
             </div>
           }
@@ -40,6 +40,7 @@ export default function BasketCartPages() {
         </div>
         <div className={s.btn_block}>
           <input type="tel" name='phone' placeholder='Your phone number' />
+          <button>To Order</button>
           <button onClick={() => dispatch(clearCart())}>Clear the cart</button>
         </div>
         

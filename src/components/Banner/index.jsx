@@ -7,12 +7,12 @@ export default function Banner() {
     <div className={["wrapper", s.banner_section].join(" ")}>
         <div className={s.banner_sub_section}>
             <div className={s.banner_block}>
-                <p>Распродажа </p>
-                <p>в честь нового сезона</p>
+                <p>Sale </p>
+                <p>new season discounts</p>
                 <div>
                     <div className={s.banner_btn}>
-                      <button>Все акции</button>  
-                      <button>Подробнее</button>
+                      <button>All actions</button>  
+                      <button>More</button>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { cartDecrement, cartIncrement, clearCart } from '../../store/reducers/cart';
+import { cartDecrement, cartIncrement, deleteFromBusket } from '../../store/reducers/cart';
 import s from "./index.module.css"
 
 export default function BasketCard({ id, title, price, image, count, discont_price }) {
@@ -8,6 +8,7 @@ export default function BasketCard({ id, title, price, image, count, discont_pri
   const dispatch = useDispatch();
   const increment = () => dispatch(cartIncrement(id));
   const decrement = () => dispatch(cartDecrement(id));
+  const delete_from_basket = () => dispatch(deleteFromBusket(id));
 
   const img = `http://localhost:3333${image}`;
 
@@ -17,7 +18,7 @@ export default function BasketCard({ id, title, price, image, count, discont_pri
       <div className={s.basket_block}>
         <div className={s.img_block}>
           <img src={img} alt={title} />
-          <button>X</button>
+          <button onClick={delete_from_basket}>X</button>
           <p className={s.price_block}>{ discont_price }p</p>
           <p className={s.count_block}>{ price }p</p>
           {/* <p>{ price } X { count } = { price * count }</p> */}

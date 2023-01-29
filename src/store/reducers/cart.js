@@ -4,11 +4,13 @@ const ADD_TO_CART = "ADD_TO_CART";
 const CLEAR_CART = "CLEAR_CART";
 const CART_INCREMENT = "CART_INCREMENT";
 const CART_DECREMENT = "CART_DECREMENT";
+const DELETE_FROM_BUSKET = "DELETE_FROM_BUSKET";
 
 export const addToCart = payload => ({ type: ADD_TO_CART, payload });
 export const clearCart = payload => ({ type: CLEAR_CART, payload });
 export const cartIncrement = payload => ({ type: CART_INCREMENT, payload });
 export const cartDecrement = payload => ({ type: CART_DECREMENT, payload });
+export const deleteFromBusket = payload => ({ type: DELETE_FROM_BUSKET, payload });
 
 const checkProduct = (state, payload) => {
     const product_in_state = state.find(el => el.id == payload.id);
@@ -35,7 +37,9 @@ export const cartReducer = (state = defaultState, action) => {
         } else {
             target_cart.count--
         }
-        return [...state]
+        return [...state];
+    } else if(action.payload === DELETE_FROM_BUSKET){
+        return state.filter(el => el.id !== action.payload)
     } else {
         return state
     }
