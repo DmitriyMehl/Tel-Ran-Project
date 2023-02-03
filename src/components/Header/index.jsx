@@ -2,6 +2,7 @@ import React from 'react'
 import logo from "../../media/logo.png"
 import shopping_bag from "../../media/shopping_bag.png"
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 import s from "./index.module.css"
 
 export default function Header() {
@@ -19,9 +20,9 @@ export default function Header() {
                 <li>
                   <Link to="/category">Categories</Link>
                 </li>
-                <li>Coupon</li>
-                <li>Promotion</li>
-                <li>Contacts</li>
+                <li><HashLink to="/#sale">Coupon</HashLink></li>
+                <li><HashLink to="/#sale_product">Promotion</HashLink></li>
+                <li><HashLink to="/#cantacts">Contacts</HashLink></li>
                 <li>
                   <Link to="/cart">
                     <img src={shopping_bag} alt="schopping_bag" />

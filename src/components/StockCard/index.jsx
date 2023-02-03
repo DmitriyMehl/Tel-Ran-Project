@@ -3,7 +3,7 @@ import s from "./index.module.css"
 
 export default function StockCard({ img, title, discount_price, price, discount }) {
   return (
-    <div className='wrapper'>
+    <div className='wrapper' id="sale_product">
         <div>
             <img src={img} alt={title} className={s.img} />
         </div>

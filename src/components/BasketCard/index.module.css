@@ -60,6 +60,7 @@
     letter-spacing: 0.03em;
     color: #3A3A3A;
     margin: 5px 45px 70px 30px;
+    max-width: 350px;
 }
 
 .btn {

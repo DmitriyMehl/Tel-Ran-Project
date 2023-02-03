@@ -22,3 +22,7 @@
     justify-content: center;
     margin-top: 20px;
 }
+
+.card_block p:hover {
+    color: #339933;
+}

@@ -20,7 +20,7 @@ export default function DiskountsForm() {
     });
 
   return (
-    <div className={["wrapper", s.discount_block].join(" ")}>
+    <div className={["wrapper", s.discount_block].join(" ")} id="sale">
         <div>
             <img src={discount} alt="Gnome" />
         </div>

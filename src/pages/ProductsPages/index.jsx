@@ -26,8 +26,6 @@ export default function ProductsPages() {
     dispatch(searchPrice({ min_value, max_value }))
   }
 
-  
-
   const category_up = category.length >= 1 ? category[categororys - 1].title : "";
 
   return (
